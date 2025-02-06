@@ -1,0 +1,10 @@
+#root {
+  font-family: Roboto;
+  height: 100%;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: var(--main-color);
+  background-color: var(--main-background);
+}

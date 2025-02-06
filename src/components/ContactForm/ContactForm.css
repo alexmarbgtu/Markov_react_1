@@ -1,0 +1,38 @@
+.blackout {
+  width: 100vw;
+  height: 100%;
+  background: rgba(41, 41, 41, 0.6);
+  position: absolute;
+  left: 0;
+  top: 0; 
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-button { 
+  width: 52px;
+  height: 52px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: -7.5rem;
+  left: 14.5rem;
+  box-sizing: border-box; 
+  border-radius: 100px;
+  z-index: 3;
+  background-color: var(--main-background);
+}
+
+.close-button img{
+  filter: invert(17%) sepia(25%) saturate(445%) hue-rotate(166deg) brightness(100%) contrast(91%);
+}
+
+.contact-form {
+  position: absolute;
+  top: calc(408 - 4%);
+  left: calc(40% - 4%);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
