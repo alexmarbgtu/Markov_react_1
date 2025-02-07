@@ -2,11 +2,15 @@ import { Fragment, useState } from 'react'
 import Layout from '../../components/Layout/Layout'
 import Button from '../../components/Button/Button'
 import photo from '../../assets/programm.jpg'
-import ContactForm from '../../components/ContactForm/ContactForm'
+// import ContactForm from '../../components/ContactForm/ContactForm'
+import ContactForm2 from '../../components/ContactForm2/ContactForm2'
 import './Main.css'
 
 export default function Main() {
 	const [contactFormState, displayContactForm] = useState(false)
+
+  // const [open, setOpen] = useState(false)
+
 
 	return (
 		<Fragment>
@@ -30,7 +34,7 @@ export default function Main() {
 				<img className='main-photo' src={photo} />
 			</Layout>
 			{contactFormState && (
-				<ContactForm onClick={() => displayContactForm(false)} />
+				<ContactForm2 onClick={() => displayContactForm(false)} />
 			)}
 		</Fragment>
 	)
