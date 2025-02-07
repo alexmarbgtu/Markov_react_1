@@ -2,4 +2,5 @@
 
 .main-blog {
   background-color: var(--main-background);
+  padding: 20px 0 20px 0;
 }

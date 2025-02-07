@@ -10,16 +10,20 @@ import './Blogs.css'
 
 export default function Blogs() {
 
-	let url = 'https://jsonplaceholder.typicode.com/posts'
+	let url = ''
 	const { postId } = useParams()
 	const [blogs, setBlogs] = useState([])
+
+	console.log(postId)
 
 	postId
 		? (url = `https://jsonplaceholder.typicode.com/posts/${postId}`)
 		: (url = 'https://jsonplaceholder.typicode.com/posts')
 
+
+	// console.log(url)
 	useEffect(() => {
-		// console.log(url)
+		console.log(url)
 		fetch(url)
 			.then(response => response.json())
 			.then(res => {

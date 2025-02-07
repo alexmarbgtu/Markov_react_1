@@ -4,6 +4,7 @@ import Main from './routes/Main/Main'
 import './App.css'
 import Blogs from './routes/Blogs/Blogs'
 import Contact from './routes/Contact/Contact'
+import NotFound from './routes/NotFound/NotFound'
 
 function App() {
 	return (
@@ -12,6 +13,8 @@ function App() {
 			<Route path='/blog' element={<Blogs />} />
 			<Route path='/blog/:postId' element={<Blogs />} />
 			<Route path='/contacts' element={<Contact />} />
+			<Route path='/works' element={<NotFound />} />
+			<Route path='/testimonials' element={<NotFound />} />
 		</Routes>
 	)
 }
