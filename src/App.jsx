@@ -10,6 +10,7 @@ function App() {
 		<Routes>
 			<Route path='/' element={<Main />} />
 			<Route path='/blog' element={<Blogs />} />
+			<Route path='/blog/:postId' element={<Blogs />} />
 			<Route path='/contacts' element={<Contact />} />
 		</Routes>
 	)
