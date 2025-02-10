@@ -1,0 +1,33 @@
+.main-notfound {
+  display: flex;
+  justify-content: flex-end;
+  height: 70%;
+}
+
+.main-notfound__title {
+  padding-top: 15%;
+  margin-right: 5%;
+  width: 50%;
+  font-weight: 300;
+}
+
+.main-notfound__img {
+  align-self: flex-end;
+  width: 30%;
+  max-width: 500px;
+}
+
+.main-notfound__h1 {
+  font-size: 3rem;
+  font-style: normal;
+  line-height: 125%;
+  letter-spacing: .3rem;
+
+  white-space: nowrap;
+}
+.main-notfound__h2 {
+
+  font-size: 2rem;
+  margin-top: 20px;
+  color: #9f9ba1;
+}

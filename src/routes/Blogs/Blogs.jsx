@@ -1,8 +1,10 @@
 import { Fragment, useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
-import { v4 as uuid } from 'uuid'
+// import { useParams } from 'react-router-dom'
 import Layout from '../../components/Layout/Layout'
 import Blog from '../../components/Blog/Blog'
+import Pagination from '@mui/material/Pagination'
+import { ThemeProvider, createTheme } from '@mui/material/styles'
+
 import './Blogs.css'
 
 
@@ -10,68 +12,80 @@ import './Blogs.css'
 
 export default function Blogs() {
 
-	let url = ''
-	const { postId } = useParams()
+	// const { postId } = useParams()
 	const [blogs, setBlogs] = useState([])
+	const [page, setPage] = useState(1)
 
-	console.log(postId)
+	
+ 	useEffect(() => {
+		if (blogs.length == 0)
+			fetch('https://jsonplaceholder.typicode.com/posts')
+				.then(response => response.json())
+				.then(res => {
+					// console.log('Hello')
+					setBlogs(res)
+				})
+	}, [page, blogs])
 
-	postId
-		? (url = `https://jsonplaceholder.typicode.com/posts/${postId}`)
-		: (url = 'https://jsonplaceholder.typicode.com/posts')
+	const theme = createTheme({
+		components: {
+			MuiPaginationItem: {
+				styleOverrides: {
+					root: {
+						variants: [
+							{
+								style: {
+									color: '#9f9ba1',
+								},
+							},
+						],
+					},
+				},
+			},
+		},
+	})
 
-
-	// console.log(url)
-	useEffect(() => {
-		console.log(url)
-		fetch(url)
-			.then(response => response.json())
-			.then(res => {
-				setBlogs(res)
-			})
-	}, [url])
+	const handleChange = (event, value) => {
+		setPage(value)
+	}
 
 	return (
 		<Fragment>
 			<Layout className='main-blog'>
-				{postId ? (
-					<Blog
-						key={uuid()}
-						title={blogs.title}
-						id={blogs.id}
-						body={blogs.body}
-					/>
-				) : (
-					blogs.map(itm => {
-						return <Blog key={uuid()} title={itm.title} id={itm.id} />
-					})
-				)}
+				<div className='blogs'>
+					{/* {blogs.map(itm => {
+						return (
+					 		<Blog
+					 			key={itm.id}
+					 			title={itm.title}
+					 			id={itm.id}
+					 			userId={itm.userId}
+					 		/>
+					 	)
+					})} */}
+					{blogs.slice((page - 1) * 10, page * 10).map(itm => {
+						return (
+							<Blog
+								key={itm.id}
+								title={itm.title}
+								id={itm.id}
+								userId={itm.userId}
+							/>
+						)
+					})}
+				</div>
+				<div className='pagin'>
+					<ThemeProvider theme={theme}>
+						<Pagination
+							count={10}
+							color='primary'
+							shape='rounded'
+							page={page}
+							onChange={handleChange}
+						/>
+					</ThemeProvider>
+				</div>
 			</Layout>
 		</Fragment>
 	)
 }
-
-// export default function Blogs() {
-	
-
-
-// 	const [blogs, setBlogs] = useState([])
-// 	useEffect(() => {
-// 		fetch('https://jsonplaceholder.typicode.com/posts')
-// 		.then((response) => response.json())
-// 		.then((res) => {
-// 			setBlogs(res)
-// 		})
-// 	}, [])
-
-// 	return (
-// 		<Fragment>
-// 			<Layout className='main-blog'>
-// 				{blogs.map((itm) => {
-// 					// console.log(itm);
-// 					return <Blog key={uuid()} title={itm.title}/>
-// 				})}
-// 			</Layout>
-// 		</Fragment>
-// 	)
-// }

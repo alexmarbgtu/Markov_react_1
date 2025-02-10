@@ -1,7 +1,7 @@
 import { Fragment, useState } from 'react'
 import Layout from '../../components/Layout/Layout'
 import Button from '../../components/Button/Button'
-import photo from '../../assets/programm.jpg'
+import photo from '../../assets/program.png'
 // import ContactForm from '../../components/ContactForm/ContactForm'
 import ContactForm2 from '../../components/ContactForm2/ContactForm2'
 import './Main.css'
@@ -16,7 +16,7 @@ export default function Main() {
 		<Fragment>
 			<Layout className='main'>
 				<div className='main-container-info'>
-					<span className='main-rectangle'></span>
+					{/* <span className='main-rectangle'></span> */}
 					<div className='h1-container'>
 						<h1 className='main-h1'>Меня зовут Александр,</h1>
 						<h1 className='main-h1'> я веб разработчик</h1>

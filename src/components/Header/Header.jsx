@@ -15,6 +15,7 @@ export default function Header() {
 				onClick={() => navigate('/contacts')}
 				label='Контакты'
 			/>
+				
 		</header>
 	)
 }

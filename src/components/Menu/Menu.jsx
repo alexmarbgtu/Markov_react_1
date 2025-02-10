@@ -13,7 +13,7 @@ export default function Menu() {
 		<nav>
 			<ul className='menu'>
 				{Menu.map(({ title, key, to }) => (
-					<Link key={key} to={to}>
+					<Link className='menu-link' key={key} to={to}>
 						{title}
 					</Link>
 				))}

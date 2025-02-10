@@ -1,6 +1,21 @@
 
 
 .main-blog {
-  background-color: var(--main-background);
-  padding: 20px 0 20px 0;
+  /* background-color: var(--main-background); */
+  /* padding: 20px 0 20px 0; */
+
+
+  margin: 50px;
+  
+}
+
+.blogs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.pagin {
+  display: flex;
+  justify-content: center;
 }

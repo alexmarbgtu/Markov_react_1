@@ -1,4 +1,19 @@
 .menu {
   display: flex;
   justify-content: space-between;
+  font-weight: 300;
+}
+
+.menu-link {
+  display: inline-block;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  flex-grow: 1;
+  text-align: center;
+  transition: all 0.2s;
+}
+
+.menu-link:hover {
+  color: #c3c2c2;
+  transition: all 0.2s;
 }
