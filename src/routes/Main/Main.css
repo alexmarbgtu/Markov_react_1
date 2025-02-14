@@ -62,4 +62,5 @@
   /* max-height: 390px; */
   width: 40%;
   max-width: 800px;
+  min-width: 500px;
 }

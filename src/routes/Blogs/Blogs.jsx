@@ -1,5 +1,4 @@
 import { Fragment, useEffect, useState } from 'react'
-// import { useParams } from 'react-router-dom'
 import Layout from '../../components/Layout/Layout'
 import Blog from '../../components/Blog/Blog'
 import Pagination from '@mui/material/Pagination'
@@ -53,16 +52,6 @@ export default function Blogs() {
 		<Fragment>
 			<Layout className='main-blog'>
 				<div className='blogs'>
-					{/* {blogs.map(itm => {
-						return (
-					 		<Blog
-					 			key={itm.id}
-					 			title={itm.title}
-					 			id={itm.id}
-					 			userId={itm.userId}
-					 		/>
-					 	)
-					})} */}
 					{blogs.slice((page - 1) * 10, page * 10).map(itm => {
 						return (
 							<Blog

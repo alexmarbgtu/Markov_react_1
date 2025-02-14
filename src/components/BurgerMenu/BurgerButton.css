@@ -1,0 +1,10 @@
+.burger-button {
+  position: absolute;
+  left: 20px;
+  top: 10px;
+  width: 34px;
+  height: 34px;
+  padding: 5px;
+  background-color: rgb(64, 64, 64);
+  border-radius: 5px;
+}
